@@ -1,0 +1,11 @@
+[STREAM] Starting consumer consumer-1 in group poc-group
+[STREAM] Got id=1754996111500-0 type=demo payload={'message': 'stream-event-0'}
+[STREAM] XACK id=1754996111500-0
+[STREAM] Got id=1754996111719-0 type=demo payload={'message': 'stream-event-1'}
+[STREAM] XACK id=1754996111719-0
+[STREAM] Got id=1754996111936-0 type=demo payload={'message': 'stream-event-2'}
+[STREAM] XACK id=1754996111936-0
+[STREAM] Got id=1754996115258-0 type=demo payload={'message': 'stream-event-0'}
+[STREAM] XACK id=1754996115258-0
+[STREAM] Got id=1754996115475-0 type=demo payload={'message': 'stream-event-1'}
+[STREAM] XACK id=1754996115475-0

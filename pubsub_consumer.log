@@ -1,0 +1,3 @@
+[PUBSUB] Subscribed to poc_channel
+[PUBSUB] Received: {'id': 0, 'ts': '2025-08-12T06:55:06.103144', 'type': 'demo', 'payload': {'message': 'pubsub-event-0'}}
+[PUBSUB] Received: {'id': 1, 'ts': '2025-08-12T06:55:06.379553', 'type': 'demo', 'payload': {'message': 'pubsub-event-1'}}
