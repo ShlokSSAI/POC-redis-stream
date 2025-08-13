@@ -15,8 +15,7 @@ Prereqs
 
 Environment
 ```bash
-export REDIS_URL="redis://default:PECFNp0jYt42UbXHjVTSbKH0uj6Te2UG@redis-17839.c56.east-us.azure.redns.redis-cloud.com:17839/0"
-```
+.env
 
 Run: Pub/Sub (shows message loss if consumer starts late)
 ```bash
