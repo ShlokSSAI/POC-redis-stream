@@ -6,8 +6,15 @@ from datetime import datetime
 from redis import Redis
 
 
-REDIS_URL = os.getenv("REDIS_URL", "redis://default:PECFNp0jYt42UbXHjVTSbKH0uj6Te2UG@redis-17839.c56.east-us.azure.redns.redis-cloud.com:17839/0")
-CHANNEL = os.getenv("POC_CHANNEL", "poc_channel")
+REDIS_URL = os.getenv("REDIS_URL")
+CHANNEL = os.getenv("POC_CHANNEL")
+
+if not REDIS_URL:
+    print("ERROR: REDIS_URL is not set. Please define it in your environment (e.g., via .env).", flush=True)
+    sys.exit(1)
+if not CHANNEL:
+    print("ERROR: POC_CHANNEL is not set. Please define it in your environment (e.g., via .env).", flush=True)
+    sys.exit(1)
 
 
 def main(num: int) -> None:

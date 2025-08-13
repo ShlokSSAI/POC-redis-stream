@@ -1,13 +1,23 @@
 import os
+import sys
 import json
 import time
 from redis import Redis
 
 
-REDIS_URL = os.getenv("REDIS_URL", "redis://default:PECFNp0jYt42UbXHjVTSbKH0uj6Te2UG@redis-17839.c56.east-us.azure.redns.redis-cloud.com:17839/0")
-STREAM_KEY = os.getenv("POC_STREAM", "poc:events")
-GROUP = os.getenv("POC_GROUP", "poc-group")
-CONSUMER = os.getenv("POC_CONSUMER", os.getenv("HOSTNAME", "consumer-1"))
+REDIS_URL = os.getenv("REDIS_URL")
+STREAM_KEY = os.getenv("POC_STREAM")
+GROUP = os.getenv("POC_GROUP")
+CONSUMER = os.getenv("POC_CONSUMER", os.getenv("HOSTNAME"))
+
+missing = []
+if not REDIS_URL: missing.append("REDIS_URL")
+if not STREAM_KEY: missing.append("POC_STREAM")
+if not GROUP: missing.append("POC_GROUP")
+if not CONSUMER: missing.append("POC_CONSUMER")
+if missing:
+    print(f"ERROR: Missing required env vars: {', '.join(missing)}. Define them in your environment (e.g., via .env).", flush=True)
+    sys.exit(1)
 
 
 def ensure_group(client: Redis) -> None:
